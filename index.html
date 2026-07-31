@@ -363,17 +363,26 @@
     .hamburger {
       display: none;
       flex-direction: column;
-      gap: 4px;
+      gap: 5px;
       cursor: pointer;
+      padding: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,0.05);
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
     }
     .hamburger span {
-      width: 24px;
-      height: 2px;
+      width: 28px;
+      height: 3px;
       background: white;
       transition: var(--transition-smooth);
-      border-radius: 2px;
+      border-radius: 3px;
     }
     header.scrolled .hamburger span { background: var(--charcoal); }
+    header.scrolled .hamburger { border-color: rgba(26,22,20,0.05); background: rgba(26,22,20,0.03); }
 
     /* SEARCH OVERLAY */
     .search-overlay {
@@ -2795,7 +2804,7 @@
       height: 85vh;
       min-height: 500px;
       overflow: hidden;
-      background: #5a3e2b;
+      background: var(--cream);
     }
     .slides-track {
       display: flex;
@@ -2819,7 +2828,7 @@
       transition: transform 10s ease, filter 1s ease;
       transform: scale(1.03);
       filter: brightness(0.85) saturate(1.05);
-      background-color: #5a3e2b;
+      background-color: var(--cream);
       width: 100%;
       height: 100%;
     }
@@ -2890,7 +2899,7 @@
 
     /* FEATURED PRODUCTS - Slider */
     .featured-products {
-      padding: 50px 0 40px;
+      padding: 0px 0 40px;
       background: var(--cream);
       position: relative;
       overflow: hidden;
@@ -2902,6 +2911,7 @@
       margin-bottom: 24px;
       flex-wrap: wrap;
       gap: 16px;
+      padding-top: 20px;
     }
     .featured-header .section-title { font-size: 2rem; }
     .featured-header p {
@@ -3054,7 +3064,7 @@
 
     /* BRAND STORY */
     .brand-story {
-      padding: 50px 0;
+      padding: 40px 0;
       background: var(--charcoal);
       color: white;
       position: relative;
@@ -4083,89 +4093,144 @@
       .pause-dashboard { padding: 16px 14px; max-width: 320px; }
       .pause-dashboard .pause-options .option-grid { grid-template-columns: 1fr 1fr 1fr; }
     }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .brand-story .container { gap: 20px; }
+      .brand-story { padding: 20px 0; }
+      .brand-story h2 { font-size: 1.6rem; }
+      .brand-story p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 12px; }
+      .brand-story .stat-grid { gap: 10px; }
+      .brand-story .stat-item h3 { font-size: 1.4rem; }
+      .brand-story .stat-item p { font-size: 0.55rem; }
+      .featured-header { padding-top: 10px; }
+      .featured-header .section-title { font-size: 1.4rem; }
+      .featured-header p { font-size: 0.75rem; }
+      .featured-products { padding: 0px 0 20px; }
+      .hero-slideshow { height: 60vh; min-height: 300px; }
+      .slide-content .btn-group { flex-direction: row; gap: 8px; }
+      .slide-content .btn-primary, .slide-content .btn-secondary { padding: 10px 20px; font-size: 0.65rem; }
+    }
     @media (max-width: 576px) {
       .container { padding: 0 16px; }
-      .logo { font-size: 1.6rem; }
-      .logo .sub { font-size: 0.5rem; letter-spacing: 1.5px; }
-      .slide-content h1 { font-size: 2.2rem; }
-      .slide-content p { font-size: 0.85rem; padding: 0 10px; }
-      .slide-content .btn-group { flex-direction: column; align-items: center; }
-      .featured-header .section-title { font-size: 1.6rem; }
-      .brand-story h2 { font-size: 1.8rem; }
-      .brand-story .stat-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-      .brand-story .stat-item h3 { font-size: 1.6rem; }
-      .footer-grid { grid-template-columns: 1fr; gap: 18px; }
-      .slideshow-controls { gap: 12px; }
-      .product-card { flex: 0 0 140px; min-height: 190px; padding: 8px 6px 10px; }
-      .product-card h4 { font-size: 0.65rem; }
-      .product-card .price { font-size: 0.7rem; }
-      .product-card .add-to-cart { font-size: 0.4rem; padding: 4px; }
-      .slider-track { gap: 10px; }
-      .phone-frame { width: 180px; padding: 10px 6px 12px; border-radius: 28px; }
-      .phone-overlay { padding-right: 4px; }
-      .phone-notch { width: 55px; height: 14px; gap: 3px; }
-      .phone-notch .camera-module { padding: 1px 4px 1px 2px; gap: 2px; }
-      .phone-notch .speaker-grill { width: 12px; height: 1.5px; }
-      .phone-notch .camera-lens { width: 4px; height: 4px; }
-      .side-btn.power { height: 22px; width: 2px; top: 52px; right: -3px; }
-      .side-btn.volume-up { height: 16px; width: 2px; top: 44px; left: -3px; }
-      .side-btn.volume-down { height: 16px; width: 2px; top: 66px; left: -3px; }
-      .phone-status .time { font-size: 0.45rem; }
-      .phone-status .battery .percent { font-size: 0.45rem; }
-      .phone-screen { min-height: 220px; }
-      .phone-content { max-height: calc(80vh - 70px); }
-      .phone-date { font-size: 0.35rem; padding: 3px 6px 4px; }
-      .willfort-credit { font-size: 0.6rem; letter-spacing: 1.5px; }
-      .phone-willfort { font-size: 0.35rem; }
-      .admin-access-dot { bottom: 18px; right: 12px; width: 10px; height: 10px; }
+      .logo { font-size: 1.4rem; }
+      .logo .sub { font-size: 0.4rem; letter-spacing: 1px; }
+      .logo-wrapper .logo-img { height: 36px; }
+      .hamburger { min-width: 40px; min-height: 40px; gap: 4px; }
+      .hamburger span { width: 22px; height: 2.5px; }
+      .slide-content h1 { font-size: 1.8rem; }
+      .slide-content p { font-size: 0.75rem; padding: 0 8px; }
+      .slide-content .btn-group { flex-direction: column; align-items: center; gap: 6px; }
+      .slide-content .btn-primary, .slide-content .btn-secondary { padding: 8px 16px; font-size: 0.6rem; }
+      .featured-header .section-title { font-size: 1.2rem; }
+      .featured-header p { font-size: 0.7rem; }
+      .brand-story h2 { font-size: 1.2rem; }
+      .brand-story .stat-grid { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+      .brand-story .stat-item h3 { font-size: 1.2rem; }
+      .brand-story .stat-item p { font-size: 0.45rem; }
+      .brand-story p { font-size: 0.75rem; line-height: 1.4; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .footer-brand .logo { font-size: 1.2rem; }
+      .footer-brand p { font-size: 0.65rem; }
+      .footer-col h4 { font-size: 0.55rem; }
+      .footer-col ul a { font-size: 0.6rem; }
+      .slideshow-controls { gap: 8px; bottom: 16px; }
+      .product-card { flex: 0 0 120px; min-height: 160px; padding: 6px 4px 8px; }
+      .product-card h4 { font-size: 0.55rem; }
+      .product-card .price { font-size: 0.6rem; }
+      .product-card .add-to-cart { font-size: 0.35rem; padding: 3px; }
+      .product-card .product-image { border-radius: 10px; }
+      .product-card .badge { font-size: 0.3rem; padding: 2px 6px; top: 4px; left: 4px; }
+      .product-card .rating { font-size: 0.4rem; }
+      .product-card .brand { font-size: 0.4rem; }
+      .slider-track { gap: 6px; }
+      .phone-frame { width: 160px; padding: 8px 4px 10px; border-radius: 24px; }
+      .phone-overlay { padding-right: 2px; }
+      .phone-notch { width: 44px; height: 12px; gap: 2px; }
+      .phone-notch .camera-module { padding: 1px 3px 1px 2px; gap: 1px; }
+      .phone-notch .speaker-grill { width: 8px; height: 1px; }
+      .phone-notch .camera-lens { width: 3px; height: 3px; }
+      .side-btn.power { height: 18px; width: 2px; top: 40px; right: -2px; }
+      .side-btn.volume-up { height: 12px; width: 2px; top: 34px; left: -2px; }
+      .side-btn.volume-down { height: 12px; width: 2px; top: 52px; left: -2px; }
+      .phone-status .time { font-size: 0.4rem; }
+      .phone-status .battery .percent { font-size: 0.4rem; }
+      .phone-screen { min-height: 180px; }
+      .phone-content { max-height: calc(80vh - 60px); }
+      .phone-date { font-size: 0.3rem; padding: 2px 4px 3px; }
+      .phone-menu-item { font-size: 0.5rem; padding: 4px 6px 4px 8px; }
+      .phone-menu-item .icon { font-size: 0.5rem; width: 12px; }
+      .phone-menu-header { font-size: 0.3rem; padding: 3px 6px 4px 8px; }
+      .phone-willfort { font-size: 0.3rem; }
+      .willfort-credit { font-size: 0.5rem; letter-spacing: 1px; }
+      .admin-access-dot { bottom: 14px; right: 10px; width: 10px; height: 10px; }
       .admin-access-dot .center-dot { width: 2px; height: 2px; }
-      .admin-panel { padding: 12px 10px; border-radius: 24px; max-width: 100%; }
-      .admin-panel .admin-title { font-size: 1rem; }
+      .admin-panel { padding: 12px 10px; border-radius: 20px; max-width: 100%; }
+      .admin-panel .admin-title { font-size: 0.9rem; }
       .admin-panel .admin-status-indicators { grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
       .admin-panel .admin-success-dashboard .success-grid { grid-template-columns: 1fr 1fr; }
-      .search-overlay { padding-top: 50px; }
-      .search-overlay .search-input-wrap input { font-size: 0.8rem; padding: 10px 0; }
-      .search-overlay .search-input-wrap { padding: 3px 3px 3px 12px; }
-      .search-overlay .search-input-wrap .search-close { padding: 8px 12px; font-size: 0.9rem; }
-      .transactions-page { padding: 14px 14px 24px; }
-      .transactions-page .trans-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .transactions-page .trans-stats .stat-box { padding: 8px 10px; }
-      .transactions-page .trans-stats .stat-box .stat-number { font-size: 1.2rem; }
-      .transactions-page .trans-stats .stat-box .stat-label { font-size: 0.4rem; }
-      .transactions-page .trans-header h1 { font-size: 1.3rem; }
-      .transactions-page .trans-header .trans-close { padding: 6px 12px; font-size: 0.55rem; }
-      .transactions-page .trans-table-wrap th { padding: 8px 10px; font-size: 0.45rem; }
-      .transactions-page .trans-table-wrap td { padding: 8px 10px; font-size: 0.65rem; }
-      .transactions-page .trans-actions button { padding: 6px 12px; font-size: 0.55rem; }
-      .order-form-container { padding: 14px 12px; max-width: 100%; }
+      .search-overlay { padding-top: 40px; }
+      .search-overlay .search-input-wrap input { font-size: 0.7rem; padding: 8px 0; }
+      .search-overlay .search-input-wrap { padding: 3px 3px 3px 10px; }
+      .search-overlay .search-input-wrap .search-close { padding: 6px 10px; font-size: 0.8rem; }
+      .search-overlay .search-input-wrap i { font-size: 0.8rem; margin-right: 8px; }
+      .search-overlay .search-result-item .result-title { font-size: 0.7rem; }
+      .search-overlay .search-result-item .result-desc { font-size: 0.55rem; }
+      .search-overlay .search-result-item .result-tag { font-size: 0.45rem; }
+      .search-overlay .search-suggestions span { font-size: 0.5rem; padding: 4px 10px; }
+      .transactions-page { padding: 12px 12px 20px; }
+      .transactions-page .trans-stats { grid-template-columns: 1fr 1fr; gap: 6px; }
+      .transactions-page .trans-stats .stat-box { padding: 6px 8px; }
+      .transactions-page .trans-stats .stat-box .stat-number { font-size: 1rem; }
+      .transactions-page .trans-stats .stat-box .stat-label { font-size: 0.35rem; }
+      .transactions-page .trans-header h1 { font-size: 1rem; }
+      .transactions-page .trans-header .trans-close { padding: 4px 10px; font-size: 0.5rem; }
+      .transactions-page .trans-table-wrap th { padding: 6px 8px; font-size: 0.4rem; }
+      .transactions-page .trans-table-wrap td { padding: 6px 8px; font-size: 0.55rem; }
+      .transactions-page .trans-actions button { padding: 4px 10px; font-size: 0.5rem; }
+      .order-form-container { padding: 12px 10px; max-width: 100%; }
       .order-form-container .form-row { grid-template-columns: 1fr; }
       .order-form-container .form-actions button { flex: 1 1 100%; }
-      .payment-modal { padding: 14px 12px; max-width: 100%; }
-      .scroll-top-arrow { width: 30px; height: 30px; font-size: 0.7rem; bottom: 55px; right: 12px; }
-      .system-pause-dot { top: 12px; left: 12px; width: 8px; height: 8px; }
-      .page-builder-panel { padding: 14px 10px; border-radius: 24px; max-width: 100%; }
-      .page-builder-panel .pb-header h2 { font-size: 1rem; }
-      .page-builder-panel .pb-header .pb-close { width: 28px; height: 28px; font-size: 0.9rem; }
-      .custom-page-overlay { padding: 12px 12px 24px; }
-      .custom-page-overlay .custom-page-content .cp-hero { padding: 20px 10px 16px; }
-      .custom-page-overlay .custom-page-content .cp-hero h1 { font-size: 1.6rem; }
-      .custom-page-overlay .custom-page-content .cp-hero .cp-subtitle { font-size: 0.8rem; }
-      .custom-page-overlay .custom-page-content .cp-body .cp-text { font-size: 0.85rem; }
-      .custom-page-overlay .custom-page-content .cp-body .cp-grid { grid-template-columns: 1fr; gap: 12px; }
-      .custom-page-overlay .custom-page-content .cp-body .cp-quote p { font-size: 1rem; }
-      .custom-page-overlay .custom-page-close { top: 10px; right: 10px; padding: 6px 12px; font-size: 0.5rem; }
-      .admin-panel .pages-list-section .page-item { padding: 4px 6px; flex-wrap: wrap; gap: 3px; }
+      .order-form-container .form-header h3 { font-size: 1rem; }
+      .order-form-container .form-group label { font-size: 0.4rem; }
+      .order-form-container .form-group input, .order-form-container .form-group select, .order-form-container .form-group textarea { font-size: 0.7rem; padding: 6px 10px; }
+      .payment-modal { padding: 12px 10px; max-width: 100%; }
+      .scroll-top-arrow { width: 28px; height: 28px; font-size: 0.6rem; bottom: 50px; right: 10px; }
+      .system-pause-dot { top: 10px; left: 10px; width: 8px; height: 8px; }
+      .page-builder-panel { padding: 12px 8px; border-radius: 20px; max-width: 100%; }
+      .page-builder-panel .pb-header h2 { font-size: 0.9rem; }
+      .page-builder-panel .pb-header .pb-close { width: 24px; height: 24px; font-size: 0.8rem; }
+      .page-builder-panel .pb-form-group label { font-size: 0.4rem; }
+      .page-builder-panel .pb-form-group input, .page-builder-panel .pb-form-group textarea, .page-builder-panel .pb-form-group select { font-size: 0.65rem; padding: 6px 8px; }
+      .custom-page-overlay { padding: 10px 10px 20px; }
+      .custom-page-overlay .custom-page-content .cp-hero { padding: 16px 8px 12px; }
+      .custom-page-overlay .custom-page-content .cp-hero h1 { font-size: 1.3rem; }
+      .custom-page-overlay .custom-page-content .cp-hero .cp-subtitle { font-size: 0.7rem; }
+      .custom-page-overlay .custom-page-content .cp-body .cp-text { font-size: 0.75rem; line-height: 1.5; }
+      .custom-page-overlay .custom-page-content .cp-body .cp-grid { grid-template-columns: 1fr; gap: 8px; }
+      .custom-page-overlay .custom-page-content .cp-body .cp-quote p { font-size: 0.85rem; }
+      .custom-page-overlay .custom-page-close { top: 8px; right: 8px; padding: 4px 10px; font-size: 0.45rem; }
+      .admin-panel .pages-list-section .page-item { padding: 3px 4px; flex-wrap: wrap; gap: 2px; }
       .admin-panel .pages-list-section .page-item .page-actions { width: 100%; justify-content: flex-end; }
-      .pause-dashboard { padding: 14px 12px; max-width: 100%; border-radius: 20px; }
-      .pause-dashboard .pause-options .option-grid { grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
-      .pause-dashboard .pause-metrics { grid-template-columns: 1fr 1fr 1fr; gap: 3px; }
-      .pause-dashboard .pause-metrics .metric { padding: 6px 3px; }
-      .pause-dashboard .pause-metrics .metric .metric-value { font-size: 0.7rem; }
-      .pause-dashboard .pause-status-bar { padding: 8px 10px; flex-wrap: wrap; gap: 3px; }
-      .developer-popup { padding: 14px 10px 16px; max-width: 280px; border-radius: 28px; }
-      .developer-popup .dev-timer .dev-time { font-size: 1rem; }
-      .developer-popup .dev-header h3 { font-size: 0.9rem; }
-      .developer-popup .dev-menu .dev-menu-item { font-size: 0.55rem; padding: 4px 8px 4px 10px; }
+      .admin-panel .pages-list-section .page-item .page-name { font-size: 0.55rem; }
+      .admin-panel .pages-list-section .page-item .page-meta { font-size: 0.3rem; }
+      .pause-dashboard { padding: 12px 10px; max-width: 100%; border-radius: 16px; }
+      .pause-dashboard .pause-options .option-grid { grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+      .pause-dashboard .pause-metrics { grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+      .pause-dashboard .pause-metrics .metric { padding: 4px 2px; }
+      .pause-dashboard .pause-metrics .metric .metric-value { font-size: 0.6rem; }
+      .pause-dashboard .pause-status-bar { padding: 6px 8px; flex-wrap: wrap; gap: 2px; }
+      .pause-dashboard .pause-header h3 { font-size: 0.9rem; }
+      .pause-dashboard .pause-days-remaining .days-value { font-size: 1.2rem; }
+      .pause-dashboard .pause-options .option-btn { padding: 4px 2px; font-size: 0.35rem; }
+      .pause-dashboard .pause-options .option-btn .time { font-size: 0.6rem; }
+      .pause-dashboard .pause-actions button { padding: 8px 10px; font-size: 0.5rem; }
+      .developer-popup { padding: 12px 8px 14px; max-width: 260px; border-radius: 24px; }
+      .developer-popup .dev-timer .dev-time { font-size: 0.85rem; }
+      .developer-popup .dev-header h3 { font-size: 0.8rem; }
+      .developer-popup .dev-menu .dev-menu-item { font-size: 0.5rem; padding: 3px 6px 3px 8px; }
+      .developer-popup .dev-status .dev-status-text { font-size: 0.4rem; }
+      .developer-popup .dev-status .dev-status-value { font-size: 0.55rem; }
+      .developer-popup .dev-message-btn { font-size: 0.45rem; padding: 6px; }
     }
   </style>
 </head>
@@ -4942,7 +5007,7 @@
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Zuri by SheShe. All rights reserved.</span>
+      <span>Zuri by SheShe. All rights reserved.</span>
       <div class="footer-socials">
         <a href="#" onclick="alert('Follow us on Instagram @zuribysheshe')"><i class="fab fa-instagram"></i></a>
         <a href="#" onclick="alert('Follow us on Pinterest @zuribysheshe')"><i class="fab fa-pinterest"></i></a>
@@ -4951,8 +5016,8 @@
         <a href="#" onclick="alert('Listen to our Spotify playlist')"><i class="fab fa-spotify"></i></a>
       </div>
     </div>
-    <div class="willfort-credit">
-      <i class="fas fa-code"></i> designed by <span>Willfort Company</span> <i class="fas fa-heart"></i>
+    <div class="willfort-credit" style="background: linear-gradient(135deg, #2a2522, #1a1614); padding: 14px 20px; border-radius: 30px; color: #fff; border: 1px solid rgba(255,255,255,0.05);">
+      <i class="fas fa-code"></i> designed by <span style="color: #c8a88e;">Willfort Company</span> <i class="fas fa-heart" style="color: #ff6b6b;"></i>
     </div>
   </div>
 </footer>
@@ -5069,8 +5134,8 @@
     bagTotal = getBagTotal();
     const badge = document.querySelector('.bag-count');
     if (badge) {
-      badge.setAttribute('data-count', bagCount);
-      badge.style.setProperty('--bag-count', '"' + bagCount + '"');
+      const count = bagCount;
+      badge.setAttribute('data-count', count);
     }
     const countEl = document.getElementById('phoneBagCount');
     if (countEl) countEl.textContent = bagCount;
